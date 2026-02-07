@@ -1,0 +1,22 @@
+.portfolio {
+    column-count: 5;
+    column-gap: 10px;
+}
+
+.portfolio img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 500px) {
+    .portfolio {
+        column-count: 2;
+    }
+}

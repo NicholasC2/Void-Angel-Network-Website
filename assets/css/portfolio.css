@@ -1,0 +1,29 @@
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.portfolio a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #dddddd;
+}
+
+.portfolio img {
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio span {
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,13 @@
+.main-content a {
+    color: #aaaaff;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #111144;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 200ms;
+}
+
+.main-content a:hover {
+    background-color: #050533;
+}

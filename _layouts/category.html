@@ -1,0 +1,33 @@
+---
+title: Photography
+permalink: /photography/
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>§_VØ1Đ/A₦GɆL_§ -«~ photography ~»- {{ page.category }}</title>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="stylesheet" href="/assets/css/category.css">
+	</head>
+	<body>
+		{% include header.html %}
+
+		<main class="main-content">
+            <div class="portfolio">
+                {% assign folder_path = "assets/images/portfolio/" | append: page.category %}
+                {% for file in site.static_files %}
+                    {% if file.path contains folder_path %}
+                        <a href="{{ file.path }}" class="item">
+                            <img src="{{ file.path }}" alt="{{ file.name }}">
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </main>
+
+		{% include footer.html %}
+	</body>
+</html>

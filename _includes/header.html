@@ -1,0 +1,18 @@
+{% assign links = 
+    "home|/;  photography|/photography/;  projects|/projects/;  terminal|/terminal/;" | split: ";" 
+%}
+
+<header>
+    <nav class="top-nav-bar">
+        <img src="/assets/images/logo.png" alt="Logo">
+        <div class="nav-links">
+
+			{% for link in links %}
+				{% assign parts = link | split: "|" %}
+                <a href="{{ parts[1] }}" class="{% if page.url == parts[1] %}current{% endif %}">
+                    {{ parts[0] }}
+                </a>
+			{% endfor %}
+        </div>
+    </nav>
+</header>
