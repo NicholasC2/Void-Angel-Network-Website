@@ -131,7 +131,7 @@ body {
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .top-nav-bar {
         flex-direction: column;
         justify-content: center;
