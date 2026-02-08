@@ -21,13 +21,16 @@ permalink: /photography/
 			{% assign first_images = "" | split: "" %}
 
 			{% for file in files %}
-				{% if file.path contains "assets/images/portfolio/" %}
+				{% if file.path contains "/photography/portfolios/" %}
 					{% assign parts = file.path | split: "/" %}
-					{% assign category = parts[4] %}
-					{% unless categories contains category %}
-						{% assign categories = categories | push: category %}
-						{% assign first_images = first_images | push: file.path %}
-					{% endunless %}
+					{% assign category = parts[3] %}
+					{% assign subfolder = parts[4] %}
+					{% if subfolder != nil %}
+						{% unless categories contains category %}
+							{% assign categories = categories | push: category %}
+							{% assign first_images = first_images | push: file.path %}
+						{% endunless %}
+					{% endif %}
 				{% endif %}
 			{% endfor %}
 

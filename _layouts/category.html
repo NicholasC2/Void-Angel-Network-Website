@@ -16,17 +16,32 @@ permalink: /photography/
 		{% include header.html %}
 
 		<main class="main-content">
-            <div class="portfolio">
-                {% assign folder_path = "assets/images/portfolio/" | append: page.category %}
-                {% for file in site.static_files %}
-                    {% if file.path contains folder_path %}
-                        <a href="{{ file.path }}" class="item">
-                            <img src="{{ file.path }}" alt="{{ file.name }}">
-                        </a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </main>
+			<div class="portfolio">
+				{% assign photo_path = "photography/portfolios/" | append: page.category | append: "/photos" %}
+				{% for file in site.static_files %}
+					{% if file.path contains photo_path %}
+						<a href="{{ file.path }}" class="item">
+							<img src="{{ file.path }}" alt="{{ file.name }}">
+						</a>
+					{% endif %}
+				{% endfor %}
+
+				{% assign video_path = "photography/portfolios/" | append: page.category | append: "/videos" %}
+				{% for file in site.static_files %}
+					{% if file.path contains video_path and file.extname == ".THM" %}
+						{% assign avi_path = file.path | replace: ".THM", ".AVI" %}
+						<div class="item video">
+							<video controls poster="{{ file.path }}">
+								<source src="{{ avi_path | replace: '.AVI', '.mp4' }}" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					{% endif %}
+				{% endfor %}
+
+			</div>
+		</main>
+
 
 		{% include footer.html %}
 	</body>
