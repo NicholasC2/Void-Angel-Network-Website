@@ -1,16 +1,23 @@
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    column-count: 5;
+    column-gap: 10px;
+}
+.main-content {
+    display: block;
 }
 
-.portfolio > * {
+.item {
     opacity: 80%;
     transition: opacity 200ms;
+
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+    break-inside: avoid;
 }
 
-.portfolio > *:hover {
+.item:hover {
     opacity: 100%;
 }
 
@@ -23,9 +30,9 @@
 }
 
 .portfolio img {
-    height: 300px;
-    width: auto;
     object-fit: cover;
+    width: 100%;
+    height: auto;
     display: block;
 }
 
